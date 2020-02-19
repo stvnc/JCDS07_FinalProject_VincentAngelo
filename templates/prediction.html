@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prediction</title>
+    <style>
+            h1{
+                color: black;
+                font-weight: bold;
+                font-family: 'Arial';
+                font-size: 44px;
+                background-color: orange;
+            }           
+            .container {
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                background: orange;
+                text-align: center;
+                display: inline-block
+            }
+    </style>
+</head>
+<body>
+
+    <center><h1>KickStarter Campaign Prediction</h1></center>
+
+    <div class="container">
+        Number of Backers: {{back}}
+        <br>
+        Expected Pledged Value: {{ple}}
+        <br>
+        Expected Goals Value: {{goal}}
+        <br>
+        Year: {{years}}
+        <br>
+        <br>
+        Duration: {{durations}}
+        <br>
+        <br>
+    </div>
+    <br><br><br>
+    <label for="result">Your Crowdfunding Project will be: </label>
+    <h2 name = "result">{{result}}</h2>
+    
+    
+</body>
+</html>

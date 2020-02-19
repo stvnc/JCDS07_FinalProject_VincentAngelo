@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KickStarter Successful Rate Prediction</title>
+    <style>
+            h1{
+                color: black;
+                font-weight: bold;
+                font-family: 'Arial';
+                font-size: 44px;
+                background-color: orange;
+            }           
+            .container {
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                background: orange;
+                text-align: center;
+                display: inline-block
+            }
+    </style>
+</head>
+<body>
+
+    <center><h1>KickStarter Campaign Predictor</h1></center>
+    <form method="POST" action="http://localhost:5000/prediction">
+        <div class="container"> 
+            <label for="Backers"> <strong>Backers: </strong></label>
+            <input type="number" name="Backers" placeholder="Input Total Number of Backers">
+        </div>
+       
+        <div class="container">
+            <label for="Pledged"> <strong>Pledged: </strong></label>
+            <input type="number" name="Pledged" placeholder="Input Expected Pledged Number"><br>
+        </div>
+        
+        <div class="container">
+            <label for="Goals"> <strong>Goals: </strong></label>
+            <input type="number" name="Goals" placeholder="Input Expected Goals Number"><br>
+        </div>
+
+        <div class="container">
+            <label for="Year"> <strong>Year: </strong></label>
+            <input type="number" name="Year" placeholder="Input Year"><br>
+        </div>
+
+        <div class="container">
+            <label for="Month"> <strong>Month: </strong></label>
+            <select name="Month">
+                <option value="4">January</option>
+                <option value="3">February</option>
+                <option value="7">March</option>
+                <option value="0">April</option>
+                <option value="8">May</option>
+                <option value="6">June</option>
+                <option value="5">July</option>
+                <option value="1">August</option>
+                <option value="11">September</option>
+                <option value="10">October</option>
+                <option value="9">November</option>
+                <option value="2">December</option>
+                </select>
+        </div>
+
+        <div class="container">
+            <label for="Duration"> <strong>Duration: </strong></label>
+            <input type="number" name="Duration" placeholder="Input Expected Number of Days of the Campaign"><br>
+        </div>
+        
+        <div class="container">
+            <label for="Categories"> <strong>Categories: </strong></label>
+            <select name="Categories">
+                <option value="0">Art</option>
+                <option value="1">Comics</option>
+                <option value="2">Crafts</option>
+                <option value="3">Dance</option>
+                <option value="4">Design</option>
+                <option value="5">Fashion</option>
+                <option value="6">Film & Video</option>
+                <option value="7">Food</option>
+                <option value="8">Games</option>
+                <option value="9">Journalism</option>
+                <option value="10">Music</option>
+                <option value="11">Photography</option>
+                <option value="12">Publishing</option>
+                <option value="13">Technology</option>
+                <option value="14">Theater</option>
+                </select>
+                
+        </div>
+        <br><br><br>
+        <button type="submit" style="background-color:black; color: orange; width: 500px; font-size : 30px">PREDICT</button>
+        
+    </form>
+    
+</body>
+</html>
