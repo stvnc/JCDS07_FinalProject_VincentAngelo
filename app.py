@@ -22,21 +22,29 @@ def predict():
         goals = int(body["Goals"])
         year = int(body["Year"])
         duration = int(body["Duration"])
-        categories = body["Categories"]
-        print(categories)
-        lenCategories = 14 - int(categories)
-        valueCategories = list(np.zeros(int(categories), dtype=int)) + list(np.ones(1, dtype=int)) + list(np.zeros(lenCategories, dtype=int))
+        categories = int(body["Categories"])
+        lenCategories = 14 - categories
+        categoriesList = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film & Video', 'Food',
+            'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater']
+        valueCategories = list(np.zeros(categories, dtype=int)) + list(np.ones(1, dtype=int)) + list(np.zeros(lenCategories, dtype=int))
         month = int(body["Month"])
-        monthValue = df[df['encoded_months'] == month]['launched_month'].values[0]
-        toPredict = list(backer) + list(pledged) + list(goals) + list(year) + list(duration) + valueCategories + valueMonth
-        results = model.predict(toPredict)
+        monthList = ['April', 'August', 'December', 'February', 'January', 'July', 'June', 'March', 'May',
+            'November', 'October', 'September']
+
+        toPredict = []
+        toPredict = [[backer] + [pledged]+ [goals] + [year] + [duration] + valueCategories + [month]]
+        results = model.predict(toPredict)[0]
+        resultProba = model.predict_proba(toPredict)[0][0] * 100
+        print(results)
         if results == 0:
             strResult = 'Failed'
+            resultProba = round(model.predict_proba(toPredict)[0][0] * 100, 2)
         elif results == 1:
             strResult = 'Successful'
+            resultProba = round(model.predict_proba(toPredict)[0][1] * 100, 2)
 
         return render_template('prediction.html', back = backer, ple = pledged, goal = goals, years = year, durations = duration,
-        months = monthValue, category = categories, result = strResult)
+        months = monthList[month], category = categoriesList[categories], result = strResult, proba = resultProba)
 
 #, months = month,result = strResult
 #---------------------------------------------------------------------
@@ -45,6 +53,5 @@ def notFound():
     return render_template('/error.html')
 #--------------------------------------------------------
 if __name__ == '__main__':
+    model = joblib.load('best_lore')
     app.run(debug=True, port=5000)
-    model = joblib('best_lore')
-    df = pd.read_csv('cleaned_kickstarter_dateset.csv')
