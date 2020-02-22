@@ -33,12 +33,7 @@ def predict():
         valueMonth = list(np.zeros(month, dtype=int)) + list(np.ones(1, dtype=int)) + list(np.zeros(lenMonth, dtype=int))
         countries = int(body["Country"])
         lenCountries = 21 - countries
-        if countries == 0:
-            valueCountries =  list(np.ones(1, dtype=int)) + list(np.zeros(lenCountries, dtype=int))
-        elif countries == 21:
-            valueCountries =  list(np.zeros(21, dtype=int)) + list(np.ones(1, dtype=int))
-        else:
-            valueCountries = list(np.zeros(countries, dtype=int)) + list(np.ones(1, dtype=int)) + list(np.zeros(lenCountries, dtype=int))
+        valueCountries = list(np.zeros(countries, dtype=int)) + list(np.ones(1, dtype=int)) + list(np.zeros(lenCountries, dtype=int))
 
         
         countryList = ['AT','AU', 'BE', 'CA', 'CH', 'DE', 'DK', 'ES', 'FR', 'GB', 'HK', 'IE', 'IT', 'JP',
@@ -46,11 +41,11 @@ def predict():
         
 
         toPredict = []
-        toPredict = [[duration] + [goals] + lenName + valueCategories + valueMonth + valueCountries]
+        toPredict = [[duration] + [goals] + [lenName] + valueCategories + valueMonth + valueCountries]
         print(valueCountries)
         results = model.predict(toPredict)[0]
         resultProba = model.predict_proba(toPredict)[0][0] * 100
-        print(results)
+        print(toPredict)
         if results == 0:
             strResult = 'Failed'
             resultProba = round(model.predict_proba(toPredict)[0][0] * 100, 2)
