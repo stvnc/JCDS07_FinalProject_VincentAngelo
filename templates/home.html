@@ -7,6 +7,8 @@
     <title>KickStarter Successful Rate Prediction</title>
     <style>
             h1{
+                width:55%;
+                border: 3px solid white;
                 color: black;
                 font-weight: bold;
                 font-family: 'Arial';
@@ -14,38 +16,34 @@
                 background-color: orange;
             }           
             .container {
-                width: 100%;
+                width: 52%;
                 margin: 0 auto;
                 padding: 20px;
                 background: orange;
                 text-align: center;
-                display: inline-block
+                display: inline-block;
             }
     </style>
 </head>
 <body>
 
     <center><h1>KickStarter Campaign Predictor</h1></center>
-    <form method="POST" action="http://localhost:5000/prediction">
-        <div class="container"> 
-            <label for="Backers"> <strong>Backers: </strong></label>
-            <input type="number" name="Backers" placeholder="Input Total Number of Backers">
-        </div>
-       
+    <center><form method="POST" action="http://localhost:5000/prediction">   
         <div class="container">
-            <label for="Pledged"> <strong>Pledged: </strong></label>
-            <input type="number" name="Pledged" placeholder="Input Expected Pledged Number"><br>
+            <label for="Name"> <strong>Name: </strong></label>
+            <input type="text" name="Name" placeholder="Crowdfunding Campaign Name: "><br>
         </div>
-        
+
         <div class="container">
             <label for="Goals"> <strong>Goals: </strong></label>
             <input type="number" name="Goals" placeholder="Input Expected Goals Number"><br>
         </div>
 
         <div class="container">
-            <label for="Year"> <strong>Year: </strong></label>
-            <input type="number" name="Year" placeholder="Input Year"><br>
+            <label for="Duration"> <strong>Duration: </strong></label>
+            <input type="number" name="Duration" placeholder="Input Expected Number of Days of the Campaign"><br>
         </div>
+
 
         <div class="container">
             <label for="Month"> <strong>Month: </strong></label>
@@ -66,9 +64,32 @@
         </div>
 
         <div class="container">
-            <label for="Duration"> <strong>Duration: </strong></label>
-            <input type="number" name="Duration" placeholder="Input Expected Number of Days of the Campaign"><br>
+            <label for="Country"> <strong>Country: </strong></label>
+            <select name="Country">
+                <option value="0">AT</option>
+                <option value="1">AU</option>
+                <option value="2">BE</option>
+                <option value="3">CA</option>
+                <option value="4">CH</option>
+                <option value="5">DE</option>
+                <option value="6">DK</option>
+                <option value="7">ES</option>
+                <option value="8">FR</option>
+                <option value="9">GB</option>
+                <option value="10">HK</option>
+                <option value="11">IE</option>
+                <option value="12">IT</option>
+                <option value="13">JP</option>
+                <option value="14">LU</option>
+                <option value="15">MX</option>
+                <option value="16">NL</option>
+                <option value="17">NO</option>
+                <option value="18">SE</option>
+                <option value="19">SG</option>
+                <option value="20">US</option>
+                </select>
         </div>
+        
         
         <div class="container">
             <label for="Categories"> <strong>Categories: </strong></label>
@@ -92,12 +113,13 @@
 
                 <br><br><br>
 
-
-                <button type="submit" style="background-color:black; color: orange; width: 500px; font-size : 30px">PREDICT</button>
+                <button type="submit" style="background-color:black; color: orange; width: 300px; font-size : 30px">PREDICT</button>
                 
         </div>
+
         
-    </form>
+        
+    </form></center>
     
 </body>
 </html>

@@ -7,6 +7,8 @@
     <title>Prediction</title>
     <style>
             h1{
+                width:55%;
+                border: 3px solid white;
                 color: black;
                 font-weight: bold;
                 font-family: 'Arial';
@@ -14,33 +16,32 @@
                 background-color: orange;
             }           
             .container {
-                width: 100%;
+                width: 50%;
                 margin: 0 auto;
                 padding: 20px;
                 background: orange;
                 text-align: center;
-                display: inline-block
+                display: inline-block;
+                border: 3px solid black;
             }
     </style>
 </head>
 <body>
 
     <center><h1>KickStarter Campaign Prediction</h1></center>
-
+<center>
     <div class="container">
-        Number of Backers: {{back}}
+        <b>Goals name: </b> {{names}}
         <br>
-        Expected Pledged Value: {{ple}}
+        <b>Goals Value: </b>{{goal}}
         <br>
-        Expected Goals Value: {{goal}}
+        <b>Duration: </b>{{durations}}
         <br>
-        Year: {{years}}
+        <b>Categories: </b>{{category}}
         <br>
-        Month: {{months}}
+        <b>Month: </b>{{months}}
         <br>
-        Duration: {{durations}}
-        <br>
-        Categories: {{category}}
+        <b>Country: </b>{{country}}
         <br>
     </div>
     <br><br><br>
@@ -48,7 +49,6 @@
     <center><h2 name = "result">{{result}}</h2></center>
     <center><label for="proba">Probability: </label></center>
     <center><h2 name = "proba">{{proba}}%</h2></center>
-    
-    
+</center>
 </body>
 </html>
