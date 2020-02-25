@@ -29,8 +29,8 @@ Model yang digunakan pada project ini adalah model klasifikasi, terdapat 3 model
 
 ### Tampilan Result Page
 #### "Successful" Prediction Result
-(https://github.com/stvnc/JCDS07_FinalProject_VincentAngelo/blob/master/img/screenShotSuccessful.png)<br>
+![Successful](https://github.com/stvnc/JCDS07_FinalProject_VincentAngelo/blob/master/img/screenShotSuccessful.png)<br>
 
 #### "Failed" Prediction Result
-(https://github.com/stvnc/JCDS07_FinalProject_VincentAngelo/blob/master/img/screenshotFailed.png)
+![Failed](https://github.com/stvnc/JCDS07_FinalProject_VincentAngelo/blob/master/img/screenshotFailed.png)
 
