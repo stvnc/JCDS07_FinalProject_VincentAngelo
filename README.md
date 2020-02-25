@@ -1,7 +1,6 @@
 # Purwadhika JCDS07 Final Project | Vincent Angelo
 ## Predicting Successful Rate of a Campaign in KickStarter.<br>
-__Dataset__: Kickstarter Projects <br>
-__Source__: [Kaggle](https://www.kaggle.com/yashkantharia/kickstarter-campaigns)
+__Dataset__: [Kickstarter Projects](https://www.kaggle.com/yashkantharia/kickstarter-campaigns)<br>
 <br>
 
 ## Project Description
